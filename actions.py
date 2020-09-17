@@ -265,7 +265,8 @@ class EndForm(FormAction):
         
         if slot_to_fill: 
             slot_values.update(self.extract_requested_slot(dispatcher,tracker,domain))
-        
+        for slot, value in slot_values.items():
+            result.append(SlotSet(slot, value))
         if slot_to_fill=="time":
             value = tracker.latest_message["entities"]
             try:
@@ -295,8 +296,11 @@ class EndForm(FormAction):
             #     result.append(SlotSet("phone",value))
             # else:
             #     result.append(SlotSet("phone",None))  
-            #     result.append(SlotSet("requested_slot","phone"))     
+            #     result.append(SlotSet("requested_slot","phone"))
+            intent = tracker.latest_message.get("intent", {}).get("name")     
             value = tracker.latest_message["entities"] 
+            if intent == "chitchat":
+                result.append(SlotSet("phone",None))
             try :  
                 phone = value[0]['value']
             except:
@@ -312,9 +316,7 @@ class EndForm(FormAction):
                         dispatcher.utter_message(template='utter_ask_phone')
                 else:
                     result.append(SlotSet("phone",None))
-                    dispatcher.utter_message(template='utter_ask_phone')
-        for slot, value in slot_values.items():
-            result.append(SlotSet(slot, value))
+                    dispatcher.utter_message(template='utter_ask_phone')  
         return result
    
 
