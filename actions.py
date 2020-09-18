@@ -305,7 +305,7 @@ class EndForm(FormAction):
                 phone = value[0]['value']
             except:
                 result.append(SlotSet("phone",None))
-                dispatcher.utter_message(template='utter_ask_phone')
+                #dispatcher.utter_message(template='utter_ask_phone')
             else :
                 phone = value[0]['value']
                 if phone:
@@ -313,10 +313,10 @@ class EndForm(FormAction):
                         result.append(SlotSet("phone",phone))
                     else:
                         result.append(SlotSet("phone",None))
-                        dispatcher.utter_message(template='utter_ask_phone')
+                        #dispatcher.utter_message(template='utter_ask_phone')
                 else:
                     result.append(SlotSet("phone",None))
-                    dispatcher.utter_message(template='utter_ask_phone')  
+                    #dispatcher.utter_message(template='utter_ask_phone')  
         return result
    
 
