@@ -1,0 +1,215 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- give_name
+- chitchat
+- inform
+- give_email
+- give_day
+- bot_challenge
+- EXTERNAL_reminder:
+    triggers: action_inactivity_scheduler
+- EXTERNAL_second:
+    triggers: action_inactivity_scheduler_final
+- thank
+entities:
+- services
+- contents
+- choices
+- trainning_package
+- docs
+- demand
+- email
+- phone
+- name
+- day
+- month
+- year
+- hour
+- day2
+- bussiness
+- call
+- connect
+- conncet
+slots:
+  additional_support:
+    type: categorical
+    values:
+    - không
+    - muốn tư vấn tiếp
+  bussiness:
+    type: text
+  call:
+    type: categorical
+    values:
+    - nhận tư vấn qua điện thoại từ bộ phận kinh doanh
+    - chat trực tiếp với tổng đài viên
+  choices:
+    type: categorical
+    values:
+    - nhận tư vấn ngay
+    - xem tài liệu
+  connect:
+    type: text
+  contents:
+    type: categorical
+    values:
+    - tư vấn sản phẩm/dịch vụ
+    - tư vấn việc làm.
+    - khác
+  demand:
+    type: unfeaturized
+  docs:
+    type: categorical
+    values:
+    - tìm hiểu về {services}
+    - xem case study
+    - báo giá
+  email:
+    type: unfeaturized
+  name:
+    type: unfeaturized
+    auto_fill: false
+  phone:
+    type: unfeaturized
+  requested_slot:
+    type: unfeaturized
+  services:
+    type: categorical
+    values:
+    - phần mềm contact center
+    - dịch vụ telesales
+    - dịch vụ chăm sóc khách hàng
+    - dịch vụ mystery shopping
+    - dịch vụ tuyển dụng
+    - dịch vụ đào tạo
+    - dịch vụ nhập liệu
+    - dịch vụ field-work
+  time:
+    type: text
+  trainning_package:
+    type: categorical
+    values:
+    - đào tạo dịch vụ khách hàng
+    - đào tạo kỹ năng outbound
+    - đào tạo quản trị và điều hành contact center
+    - đào tạo trải nghiệm khách hàng trong thời đại số.
+    - đào tạo nâng cao năng lực quản lý cấp trung
+responses:
+  utter_default:
+  - text: Hệ thống không thể nhận ra thông tin bạn cung cấp.Bạn vui lòng nhập lại
+      thông tin. Xin cảm ơn
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_ask_contents:
+  - buttons:
+    - payload: Tư vấn sản phẩm dịch vụ
+      title: Tư vấn sản phẩm dịch vụ
+    - payload: Tư vấn việc làm
+      title: Tư vấn việc làm
+    - payload: Khác
+      title: Khác
+    text: BHS xin chào, Vui lòng chọn nội dung bạn cần hỗ trợ
+  utter_ask_services:
+  - buttons:
+    - payload: Phần mềm contact center
+      title: Phần mềm contact center
+    - payload: Dịch vụ telesales
+      title: Dịch vụ telesales
+    - payload: Dịch vụ chăm sóc khách hàng
+      title: Dịch vụ chăm sóc khách hàng
+    - payload: Dịch vụ Mystery shopping
+      title: Dịch vụ Mystery shopping
+    - payload: Dịch vụ tuyển dụng
+      title: Dịch vụ tuyển dụng
+    - payload: Dịch vụ đào tạo
+      title: Dịch vụ đào tạo
+    - payload: Dịch vụ nhập liệu
+      title: Dịch vụ nhập liệu
+    - payload: Dịch vụ field-work
+      title: Dịch vụ field-work
+    text: Tuyệt vời! Em xin cảm ơn, vui lòng chọn dịch vụ quý khách cần tư vấn
+  utter_ask_choices:
+  - buttons:
+    - payload: Nhận tư vấn ngay
+      title: Nhận tư vấn ngay
+    - payload: xem tài liệu
+      title: xem tài liệu
+    text: Quý khách muốn nhận tư vấn ngay hay tìm hiểu thêm tài liệu về {services}
+      ạ?
+  utter_ask_trainning_package:
+  - buttons:
+    - payload: Đào tạo dịch vụ khách hàng
+      title: Đào tạo dịch vụ khách hàng
+    - payload: Đào tạo kỹ năng Outbound
+      title: Đào tạo kỹ năng Outbound
+    - payload: Đào tạo quản trị và điều hành Contact center
+      title: Đào tạo quản trị và điều hành Contact center
+    - payload: Đào tạo trải nghiệm khách hàng trong thời đại số
+      title: Đào tạo trải nghiệm khách hàng trong thời đại số
+    - payload: Đào tạo nâng cao năng lực quản lý cấp trung
+      title: Đào tạo nâng cao năng lực quản lý cấp trung
+    text: Hiện nay bên em đang cung cấp các gói đào tạo sau, không biết quý khách
+      quan tâm gói nào ạ?
+  utter_ask_docs:
+  - buttons:
+    - payload: Tìm hiểu về dịch vụ
+      title: Tìm hiểu về dịch vụ
+    - payload: Xem case study
+      title: Xem case study
+    - payload: Báo giá
+      title: Báo giá
+    text: Em xin gửi tài liệu liên quan đến {services}, mời quý khách tham khảo.
+  utter_ask_demand:
+  - text: Quý khách vui lòng mô tả sơ bộ nhu cầu sử dụng {services} của mình để em
+      tư vấn chính xác ạ!
+  utter_ask_name:
+  - text: Quý khách vui lòng cung cấp giúp em các thông tin sau đây để bên em gọi
+      lại cho mình ạ.Tên của quý khách là?
+  utter_ask_phone:
+  - text: Số điện thoại của quý khách?
+  utter_ask_email:
+  - text: Email của quý khách là ?
+  utter_ask_bussiness:
+  - text: Tên doanh nghiệp của quý khách ?
+  utter_ask_connect:
+  - buttons:
+    - payload: Hà Nội
+      title: Hà Nội
+    - payload: TPHCM
+      title: TPHCM
+    text: Quý khách muốn kết nối với bộ phận kinh doanh TPHCM hay Hà Nội?
+  utter_ask_time:
+  - text: Dạ, em xin cảm ơn. Không biết BHS có thể liên hệ lại vào khung thời gian
+      nào để thuận tiện cho quý khách ạ?
+  utter_ask_additional_support:
+  - buttons:
+    - payload: không
+      title: Không
+    - payload: Muốn tư vấn tiếp
+      title: Muốn tư vấn tiếp
+    text: Dạ, thông tin của quý khách đã được chuyển đến bộ phận kinh doanh {connect},
+      bên em sẽ sắp xếp liên hệ với quý khách vào khoảng {time}. Quý khách có cần
+      em hỗ trợ thêm thông tin gì không ạ?
+  utter_ask_call:
+  - buttons:
+    - payload: Nhận tư vấn qua điện thoại từ bộ phận kinh doanh
+      title: Nhận tư vấn qua điện thoại từ bộ phận kinh doanh
+    - payload: 'Chat trực tiếp với tổng đài viên '
+      title: Chat trực tiếp với tổng đài viên
+    text: Cảm ơn quý khách, em đã nhận được thông tin. Hiện nay {services} của BHS
+      được triển khai dựa trên những yêu cầu cụ thể của doanh nghiệp, sau đó BHS sẽ
+      phân tích và đề xuất giải pháp phù hợp. Vì thế, BHS muốn kết nối với quý khách
+      để tư vấn rõ hơn được không ạ?
+actions:
+- action_inactivity_scheduler
+- action_inactivity_scheduler_final
+forms:
+- begin_form
+- middle_form
+- end_form
