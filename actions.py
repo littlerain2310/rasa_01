@@ -336,6 +336,7 @@ class EndForm(FormAction):
                 time=time.strftime("%m/%d/%Y, %H:%M:%S")
                 result.append(SlotSet("time",time))
             else:
+                print(',,,,,,')
                 result.append(SlotSet("time",None))
             # try:
             #     day = value[0]['value']
@@ -362,7 +363,9 @@ class EndForm(FormAction):
         
         
         return result
+
    
+
 class ActionInactivityScheduler(Action):
     def name(self):
         return "action_inactivity_scheduler"
