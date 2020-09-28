@@ -174,6 +174,8 @@
 - [Công ty cổ phần ô tô Trường Hải](bussiness)
 - [Công ty cổ phần Tập đoàn Hòa Phát](bussiness)
 - công ty của bác là [công ty cổ phần công nghệ sao thủy](bussiness)
+- [công ty Elcom](bussiness)
+- [tập đoàn Vingroup](bussiness)
 - anh muốn [nhận tư vấn qua điện thoại từ bộ phận kinh doanh](call)
 - [chat trực tiếp với tổng đài viên](call)
 - [Hà Nội](connect)
@@ -183,7 +185,6 @@
 - chỗ anh là [Thái Bình](connect)
 - bộ phận [Hà Nội](connect)
 - bộ phận [TPHCM](connect)
-
 
 ## intent:give_email
 - email tôi là [tuanxinghiepdongda@gmail.com](email)
@@ -224,6 +225,12 @@
 - cho anh hẹn [6](hour)h  chiều [mai](day2)
 - năm [2020](year) tháng [10](month) ngày [23](day)
 - anh muốn vào [15](hour)h chiều ngày [kia](day2)
+- [15](hour) giờ hôm [nay](day2)
+- ngày mồng [8](day) tháng [7](month) năm [2020](year)
+- [6](hour) giờ mùng [5](day) tháng [9](month) năm [2000](year)
+- [10](hour) giờ vào trưa [mai](day2)
+- anh cần lịch hẹn vào mùng [5](day) tháng [7](month) năm [1999](year)
+- [20](hour) giờ tối ngày [kia](day2) 
 ## regex:email
 - \b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b
 

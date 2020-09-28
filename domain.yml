@@ -36,6 +36,7 @@ entities:
 - call
 - connect
 - conncet
+- bussinessbussiness
 slots:
   additional_support:
     type: categorical
