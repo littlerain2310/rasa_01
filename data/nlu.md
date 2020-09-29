@@ -222,15 +222,22 @@
 - đặt anh quả lịch [10](hour) h sáng ngày [kia](day2) nhé
 - cho anh hẹn [1](hour) giờ chiều [nay](day2)
 - ngày [mai](day2) lúc [4](hour) giờ chiều nhé
-- cho anh hẹn [6](hour)h  chiều [mai](day2)
+- cho anh hẹn [6](hour) giờ  chiều [mai](day2)
 - năm [2020](year) tháng [10](month) ngày [23](day)
-- anh muốn vào [15](hour)h chiều ngày [kia](day2)
+- anh muốn vào [15](hour) giờ chiều ngày [kia](day2)
 - [15](hour) giờ hôm [nay](day2)
 - ngày mồng [8](day) tháng [7](month) năm [2020](year)
 - [6](hour) giờ mùng [5](day) tháng [9](month) năm [2000](year)
 - [10](hour) giờ vào trưa [mai](day2)
 - anh cần lịch hẹn vào mùng [5](day) tháng [7](month) năm [1999](year)
 - [20](hour) giờ tối ngày [kia](day2) 
+- [13h](hour) chiều [nay](day2) nhé
+- [6h](hour) ngày [23](day) tháng [9](month) năm [2020](year)
+- ngày [kia](day2) lúc [8h](hour) nhé
+- [20h](hour) ngày hôm [nay](day2)
+- [8h](hour) ngày mùng [19](day) tháng [6](month) năm [1999](year) nhé
+- [7H](hour) trưa [mai](day2) được không ?
+- [16H](hour) vào ngày hôm [nay](day2)
 ## regex:email
 - \b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b
 

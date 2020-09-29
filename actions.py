@@ -195,7 +195,16 @@ class EndForm(FormAction):
                 return True
         except :
             return False
-
+    @staticmethod
+    def convert_tail(s):
+        s=s.lower()
+        if "h" in s:
+            s=s.replace("h","")
+            print("1")
+            return s
+        else:
+            print("2")
+            return s
     @staticmethod
     def required_slots(tracker) -> List[Text]:
         if tracker.get_slot("call") == "Chat trực tiếp với tổng đài viên":
@@ -305,6 +314,7 @@ class EndForm(FormAction):
                         year = x['value']
                     if x['entity'] == 'hour':
                         hour = x['value']
+                        hour = self.convert_tail(hour)
                 time = datetime.datetime(int(year),int(month),int(day),int(hour))
                 time=time.strftime("%m/%d/%Y, %H:%M:%S")
                 result.append(SlotSet("time",time))
@@ -332,6 +342,7 @@ class EndForm(FormAction):
                             time = datetime.datetime.now() + datetime.timedelta(days=2)
                     if x['entity'] == 'hour':
                         hour = x['value']
+                        hour = self.convert_tail(hour)
                 time = time.replace(hour=int(hour),minute=0,second=0)
                 time=time.strftime("%m/%d/%Y, %H:%M:%S")
                 result.append(SlotSet("time",time))
